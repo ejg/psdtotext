@@ -1,0 +1,3 @@
+#!/bin/bash
+fbname=$(basename "$1" .psd)
+strings $1  | grep photoshop:LayerText | sed -e 's/<[^>]*>//g' | tail -r > $fbname.txt

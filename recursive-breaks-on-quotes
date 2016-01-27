@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -name "*.psd" -exec sh -c "strings {}  | grep photoshop:LayerText | sed -e 's/<[^>]*>//g' | tail -r > {}.txt" \; && find . -name '*.txt' -mindepth 2 -type f -exec mv -i '{}' /Users/ejg/Downloads/txt \;
